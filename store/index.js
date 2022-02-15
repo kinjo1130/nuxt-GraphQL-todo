@@ -20,9 +20,4 @@ export const actions = {
     context.commit('changeState',todo)
   },
 }
-export const getters = {
-  hoge(state) {
-    console.log('getters', state.name)
 
-  }
-}
