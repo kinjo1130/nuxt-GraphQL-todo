@@ -1,17 +1,33 @@
 <template>
-  <div>
-    <h1>TodoApp</h1>
-    <v-text-field v-model="name" label="Name"></v-text-field>
-    <v-text-field v-model="description" label="Description"></v-text-field>
-    <v-btn @click="createTodo">タスク生成する</v-btn>
-    <div>
-      <Lists
-        :todolists="todos"
-        @delete="deleteTodo"
-        @update="updateTodo"
-      ></Lists>
-    </div>
-  </div>
+  <v-app>
+    <v-container>
+      <v-flex>
+        <div >
+          <h1>TodoApp</h1>
+          <v-text-field v-model="name" label="やること" outlined></v-text-field>
+          <v-text-field
+            v-model="description" outlined
+            label="説明"
+          ></v-text-field>
+          <div >
+           <v-container>
+             <v-flex class="d-flex justify-end">
+                <v-btn @click="createTodo" depressed color="primary">タスク生成する</v-btn>
+             </v-flex>
+           </v-container>
+          </div>
+          <div>
+            <Lists
+              :todoLists="todos"
+              @delete="deleteTodo"
+              @update="updateTodo"
+
+            ></Lists>
+          </div>
+        </div>
+      </v-flex>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
@@ -89,7 +105,7 @@ export default {
         .then((result) => {
           //成功したらというやつやね
           console.log(result)
-          this.getTodos()
+          this.getTodos();
         })
         //失敗したらというやつやね
         .catch((error) => {
