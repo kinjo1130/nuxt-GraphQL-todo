@@ -31,8 +31,6 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <!-- <pre>{{ tasks }}</pre>
-    <pre>{{ index }}</pre> -->
   </div>
 </template>
 

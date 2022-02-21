@@ -12,7 +12,7 @@
         <v-list-item-content>
           <v-list-item-title>{{ todoList.name }}</v-list-item-title>
           <v-list-item-subtitle>
-            {{ todoList.description }}::{{ edit }}
+            {{ todoList.description }}
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -25,12 +25,15 @@
           削除
         </v-btn>
         <!-- <v-btn @click="getIndex(todoList)">{{ getIndex(todoList) }}</v-btn> -->
-        <div >
-          <v-btn depressed color="primary" @click="editFlag = true,getIndex(todoList,index)">
+        <div>
+          <v-btn
+            depressed
+            color="primary"
+            @click="todoList.isEdit = true"
+          >
             編集
           </v-btn>
         </div>
-        <!-- この数字のところをかえれたらいいのでは？？ -->
         <div v-if="todoList.isEdit === true">
           <v-text-field v-model="todoList.name" type="text" />
           <v-text-field v-model="todoList.description" type="text" />
@@ -39,13 +42,15 @@
             color="primary"
             @click="
               updatetodo(todoList.id, todoList.name, todoList.description),
-                (editFlag = false)
+                (editFlag = false),
+                (isEdit[index] = false)
             "
           >
             更新する
           </v-btn>
         </div>
       </div>
+      <pre>{{ isEdit }}</pre>
       <Dialogs :tasks="todoLists" :index="index" @delete="deletetodo" />
     </v-list>
 
@@ -54,7 +59,7 @@
       <v-list-item two-line>
         <v-list-item-content>
           <v-list-item-title>{{ todo.name }}</v-list-item-title>
-          <v-list-item-subtitle>{{ index }}</v-list-item-subtitle>
+          <v-list-item-subtitle>{{ index  }}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -75,7 +80,7 @@ export default {
   data() {
     return {
       editFlag: false,
-      edit: false,
+      isEdit: [],
       name: '',
       description: '',
       todos: this.$store.state.todos,
@@ -85,10 +90,10 @@ export default {
     //console.log(this.todoLists.length)
   },
   methods: {
-    getIndex(todoList,index) {
+    getIndex(index) {
       console.log(index)
-      console.log(todoList)
-      todoList.isEdit = true
+      this.isEdit[index] = true
+      console.log(this.isEdit[index])
     },
     deletetodo(index, todoId) {
       this.$emit('delete', index, todoId)
