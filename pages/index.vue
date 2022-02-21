@@ -1,33 +1,29 @@
 <template>
-  <v-app>
-    <v-container>
-      <v-flex>
-        <div >
-          <h1>TodoApp</h1>
-          <v-text-field v-model="name" label="やること" outlined></v-text-field>
-          <v-text-field
-            v-model="description" outlined
-            label="説明"
-          ></v-text-field>
-          <div >
-           <v-container>
-             <v-flex class="d-flex justify-end">
-                <v-btn @click="createTodo" depressed color="primary">タスク生成する</v-btn>
-             </v-flex>
-           </v-container>
-          </div>
-          <div>
-            <Lists
-              :todoLists="todos"
-              @delete="deleteTodo"
-              @update="updateTodo"
-
-            ></Lists>
-          </div>
+  <v-container>
+    <v-flex>
+      <div>
+        <h1>TodoApp</h1>
+        <v-text-field v-model="name" label="やること" outlined />
+        <v-text-field v-model="description" outlined label="説明" />
+        <div>
+          <v-container>
+            <v-flex class="d-flex justify-end">
+              <v-btn depressed color="primary" @click="createTodo">
+                タスク生成する
+              </v-btn>
+            </v-flex>
+          </v-container>
         </div>
-      </v-flex>
-    </v-container>
-  </v-app>
+        <div>
+          <Lists
+            :todo-lists="todos"
+            @delete="deleteTodo"
+            @update="updateTodo"
+          />
+        </div>
+      </div>
+    </v-flex>
+  </v-container>
 </template>
 
 <script>
@@ -73,14 +69,12 @@ export default {
         query: deleteTodo,
         variables: { input: { id: todoId } }, //ここがあまり何をしているかが理解できない
       })
-        .then((result) => {
+        .then(() => {
           //成功したらというやつやね
           //console.log(result);
           this.todos.splice(index, 1)
-          //console.log(todoId);
-          // console.log(result.data.deleteTodo.name)
-          // console.log(result.data.deleteTodo.description)
-          this.getTodos() //こいつをかますことで、しっかりと再初期化できる
+
+          this.getTodos() 
         })
         //失敗したらというやつやね
         .catch((error) => {
@@ -88,9 +82,7 @@ export default {
         })
     },
     async updateTodo(...data) {
-      let [todoId, name, description] = data
-      // const { name, description } = this
-      //console.log(this)
+      let [todoId, name, description] = data;
       await API.graphql({
         query: updateTodo,
         variables: {
@@ -100,14 +92,11 @@ export default {
             description: description,
           },
         },
-        //ここがあまり何をしているかが理解できない
       })
         .then((result) => {
-          //成功したらというやつやね
           console.log(result)
-          this.getTodos();
+          this.getTodos()
         })
-        //失敗したらというやつやね
         .catch((error) => {
           console.log(error)
         })
