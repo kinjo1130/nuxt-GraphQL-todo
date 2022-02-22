@@ -1,13 +1,6 @@
 <template>
   <div>
-    <v-list
-      v-for="(todoList, index) in todoLists"
-      :key="todoList.id"
-      flat
-      outlined
-      rounded
-      class="mb-4"
-    >
+    <v-list v-for="(todoList, index) in todoLists" :key="todoList.id" flat outlined rounded class="mb-4">
       <v-list-item two-line>
         <v-list-item-content>
           <v-list-item-title>{{ todoList.name }}</v-list-item-title>
@@ -16,42 +9,25 @@
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <div class="d-flex justify-end">
-        <v-btn
-          depressed
-          color="primary"
-          @click="deletetodo(index, todoList.id)"
-        >
-          削除
-        </v-btn>
-        <!-- <v-btn @click="getIndex(todoList)">{{ getIndex(todoList) }}</v-btn> -->
-        <div>
-          <v-btn
-            depressed
-            color="primary"
-            @click="todoList.isEdit = true"
-          >
-            編集
-          </v-btn>
+      <div>
+        <div v-if="todoList.isEdit === null" class="d-flex justify-end">
+          <Dialogs :tasks="todoLists" :index="index" @delete="deletetodo" />
+          <v-btn depressed color="primary" @click="todoList.isEdit = true"> 編集 </v-btn>
         </div>
-        <div v-if="todoList.isEdit === true">
+        <div v-else-if="todoList.isEdit === true">
           <v-text-field v-model="todoList.name" type="text" />
           <v-text-field v-model="todoList.description" type="text" />
-          <v-btn
-            depressed
-            color="primary"
-            @click="
-              updatetodo(todoList.id, todoList.name, todoList.description),
-                (editFlag = false),
-                (isEdit[index] = false)
-            "
-          >
-            更新する
-          </v-btn>
+          <div class="d-flex justify-end">
+            <v-btn
+              depressed
+              color="primary"
+              @click="updatetodo(todoList.id, todoList.name, todoList.description), (editFlag = false)"
+            >
+              更新する
+            </v-btn>
+          </div>
         </div>
       </div>
-      <pre>{{ isEdit }}</pre>
-      <Dialogs :tasks="todoLists" :index="index" @delete="deletetodo" />
     </v-list>
 
     <h2>storeから</h2>
@@ -59,7 +35,7 @@
       <v-list-item two-line>
         <v-list-item-content>
           <v-list-item-title>{{ todo.name }}</v-list-item-title>
-          <v-list-item-subtitle>{{ index  }}</v-list-item-subtitle>
+          <v-list-item-subtitle>{{ index }}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -70,39 +46,30 @@ export default {
   props: {
     todoLists: {
       type: Array,
-      default: '',
+      default: ""
     },
     dialog: {
       type: String,
-      default: '',
-    },
+      default: ""
+    }
   },
   data() {
     return {
       editFlag: false,
-      isEdit: [],
-      name: '',
-      description: '',
-      todos: this.$store.state.todos,
-    }
-  },
-  mounted() {
-    //console.log(this.todoLists.length)
+      name: "",
+      description: "",
+      todos: this.$store.state.todos
+    };
   },
   methods: {
-    getIndex(index) {
-      console.log(index)
-      this.isEdit[index] = true
-      console.log(this.isEdit[index])
-    },
     deletetodo(index, todoId) {
-      this.$emit('delete', index, todoId)
-      console.log(index)
-      console.log(todoId)
+      this.$emit("delete", index, todoId);
+      console.log(index);
+      console.log(todoId);
     },
     updatetodo(todoId, name, description) {
-      this.$emit('update', todoId, name, description)
-    },
-  },
-}
+      this.$emit("update", todoId, name, description);
+    }
+  }
+};
 </script>
