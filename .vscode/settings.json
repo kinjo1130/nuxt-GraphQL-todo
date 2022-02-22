@@ -8,10 +8,8 @@
     "amplify/backend/amplify-meta.json": true,
     "amplify/backend/awscloudformation": true
   },
-
-    "editor.codeActionsOnSave":{
-      "source.fixAll.eslint":true
-    },
-    "editor.guides.bracketPairs":true
-
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.guides.bracketPairs": true
 }

@@ -8,21 +8,12 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2023-02-14T06:40:01.431Z",
-              "description": ""
+              "apiKeyExpirationDays": 7
             }
           },
           "additionalAuthenticationProviders": []
         }
       }
-    }
-  },
-  "hosting": {
-    "amplifyhosting": {
-      "service": "amplifyhosting",
-      "providerPlugin": "awscloudformation",
-      "type": "manual"
     }
   }
 }

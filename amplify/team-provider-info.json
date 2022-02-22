@@ -1,23 +1,15 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-nuxtamplify-dev-153808-authRole",
-      "UnauthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-153808-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-153808-authRole",
+      "AuthRoleName": "amplify-nuxtamplify-dev-143129-authRole",
+      "UnauthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-143129-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-143129-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-nuxtamplify-dev-153808-deployment",
-      "UnauthRoleName": "amplify-nuxtamplify-dev-153808-unauthRole",
-      "StackName": "amplify-nuxtamplify-dev-153808",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:067123485758:stack/amplify-nuxtamplify-dev-153808/aed73900-8d60-11ec-be8e-0a16b43319a7",
-      "AmplifyAppId": "d27uar59fngkjf"
-    },
-    "categories": {
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "d27uar59fngkjf",
-          "type": "manual"
-        }
-      }
+      "DeploymentBucketName": "amplify-nuxtamplify-dev-143129-deployment",
+      "UnauthRoleName": "amplify-nuxtamplify-dev-143129-unauthRole",
+      "StackName": "amplify-nuxtamplify-dev-143129",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:067123485758:stack/amplify-nuxtamplify-dev-143129/b2e400a0-93a0-11ec-a525-06485a7cb0e5",
+      "AmplifyAppId": "d3eadreg3ftek0"
     }
   }
 }
