@@ -1,0 +1,57 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nuxtamplify-dev-153808-authRole",
+      "UnauthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-153808-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-153808-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-nuxtamplify-dev-153808-deployment",
+      "UnauthRoleName": "amplify-nuxtamplify-dev-153808-unauthRole",
+      "StackName": "amplify-nuxtamplify-dev-153808",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:067123485758:stack/amplify-nuxtamplify-dev-153808/aed73900-8d60-11ec-be8e-0a16b43319a7",
+      "AmplifyAppId": "d27uar59fngkjf"
+    }
+  },
+  "api": {
+    "nuxtamplify": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2023-02-14T06:40:01.431Z",
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "3be34r6k3nan5nymi3frgd6ayi",
+        "GraphQLAPIEndpointOutput": "https://tqnrizpyfbcr3gxapidjwwce6i.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-cduf5vxgpzap3mdnmmxlrsseyu"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-nuxtamplify-dev-153808-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apinuxtamplify"
+      },
+      "lastPushTimeStamp": "2022-02-22T02:53:14.728Z",
+      "lastPushDirHash": "Zf50BmITEFYIcbt7EVK4zB80gcM="
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-nuxtamplify-dev-153808-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "logicalId": "hostingamplifyhosting"
+      },
+      "lastPushTimeStamp": "2022-02-22T02:53:14.761Z",
+      "output": {},
+      "lastPushDirHash": "ljKZjOw1UykrFEknwol1acJJUGs="
+    }
+  }
+}
