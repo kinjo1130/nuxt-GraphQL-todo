@@ -5,8 +5,16 @@
     "serviceName": "AppSync",
     "gqlSchemaPath": "/Users/kinjyo/Desktop/dev_desktop/nuxt-amplify/amplify/backend/api/nuxtamplify/schema.graphql",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "mode": "AWS_IAM"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-02-24T05:27:25.584Z",
+        "keyDescription": "AKIAQ7IG7DQ7NFYCW2WH"
+      }
+    ]
   }
 }
