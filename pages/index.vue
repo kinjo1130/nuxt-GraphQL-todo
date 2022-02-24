@@ -8,7 +8,7 @@
         <div>
           <v-container>
             <v-flex class="d-flex justify-end">
-              <v-btn depressed color="primary" @click="createTodo"> タスクを生成する </v-btn>
+              <v-btn depressed color="primary" @click="createTodo"> タスク生成する </v-btn>
             </v-flex>
           </v-container>
         </div>
