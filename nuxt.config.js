@@ -3,7 +3,7 @@ import colors from 'vuetify/es5/util/colors'
 export default {
 
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: true,
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -25,7 +25,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/amplify.js', ssr: true }],
+  plugins: [{ src: '~/plugins/amplify.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
