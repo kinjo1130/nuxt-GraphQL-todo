@@ -1,0 +1,41 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nuxtamplify-dev-143129-authRole",
+      "UnauthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-143129-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::067123485758:role/amplify-nuxtamplify-dev-143129-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-nuxtamplify-dev-143129-deployment",
+      "UnauthRoleName": "amplify-nuxtamplify-dev-143129-unauthRole",
+      "StackName": "amplify-nuxtamplify-dev-143129",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:067123485758:stack/amplify-nuxtamplify-dev-143129/b2e400a0-93a0-11ec-a525-06485a7cb0e5",
+      "AmplifyAppId": "d3eadreg3ftek0"
+    }
+  },
+  "api": {
+    "nuxtamplify": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "rzqy6eljcfc5fjkxqyi6tnw5au",
+        "GraphQLAPIEndpointOutput": "https://oxvcmbnub5fbpokcei5ht43woe.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-3xpob3sucrfenepmcxlezgyg3i"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-nuxtamplify-dev-143129-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apinuxtamplify"
+      },
+      "lastPushTimeStamp": "2022-02-22T05:41:21.841Z",
+      "lastPushDirHash": "cM/mztiskeTY2HnF4hei+YevbI0="
+    }
+  }
+}
