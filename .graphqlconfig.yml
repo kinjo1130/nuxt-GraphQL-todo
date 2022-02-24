@@ -1,11 +1,14 @@
 projects:
   nuxtamplify:
     schemaPath: src/graphql/schema.json
+    # スキーマの場所
     includes:
       - src/graphql/**/*.js
     excludes:
       - ./amplify/**
+    #　出力先を変える
     extensions:
+    # amplifyの中での設定
       amplify:
         codeGenTarget: javascript
         generatedFileName: ''
