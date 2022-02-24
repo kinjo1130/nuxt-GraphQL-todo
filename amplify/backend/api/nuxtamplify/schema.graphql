@@ -6,5 +6,5 @@ type Todo @model {
   id: ID!
   name: String!
   description: String
-  isEdit: Boolean
+  isEdit:Boolean
 }

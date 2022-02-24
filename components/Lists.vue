@@ -29,7 +29,6 @@
         </div>
       </div>
     </v-list>
-
     <h2>storeから</h2>
     <v-list v-for="(todo, index) in todos" :key="todo.id" flat outlined>
       <v-list-item two-line>
