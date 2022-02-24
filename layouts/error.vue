@@ -19,7 +19,6 @@ export default {
   props: {
     error: {
       type: Object,
-<<<<<<< HEAD
       default: null,
     },
   },
@@ -36,24 +35,7 @@ export default {
       title,
     }
   },
-=======
-      default: null
-    }
-  },
-  data () {
-    return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
-    }
-  },
-  head () {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title
-    }
-  }
->>>>>>> refs/remotes/origin/main
+
 }
 </script>
 
