@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "nuxtamplify",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/kinjyo/Desktop/dev_desktop/nuxt-amplify/amplify/backend/api/nuxtamplify/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
